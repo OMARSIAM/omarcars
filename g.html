@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <style>
+        div, label #sentence {
+            margin: 10px;
+        }
+        button {
+            margin: 10px 10px;
+        }
+    </style>
+    <body>
+     <div>
+      <label for="sentence">Enter Any text:</label>
+      <input type="text" name="sentence" id ="sentence" placeholder="Enter text.."> <br>
+      <button onClick="reverseOrder()">Click me to reverse</button>
+      <!-- Paragraph to show output -->
+       <p id="output"></p>
+     </div>
+     
+     <!-- JavaScript Code -->
+     <script>
+         
+
+  function reverseOrder() {
+
+    //Getting value of inputted sentence in text box
+    var input = document.getElementById("sentence").value;
+    // if value of input is not empty
+    if (input) {
+    //Reversing order of input
+    var reversedSentence = input.split(' ').reverse().join(' ');
+
+    //Explanation: 
+    // split(' ') will split the input by single  space (' ')
+    // reverse() will reverse the splitted string
+    // join('') will join the resulted reversed string separated with a single space (' ')
+    document.getElementById("output").innerHTML =  "Reversed Sentence is: " + reversedSentence;
+}
+
+  else {
+      document.getElementById("output").innerHTML =  
+  "Please enter a value";
+  }
+
+
+}
+
+     </script>
+    </body>
+</html>
